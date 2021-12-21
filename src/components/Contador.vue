@@ -1,5 +1,5 @@
 <template>
-    <h3>Titulo contador!!!</h3>
+    <h3>{{ titulo }}</h3>
     <p> {{ vrContador }} <sup> {{vrExponente}} </sup> = {{elevarC}} </p>
     <div>
         <button @click="incrementar">+1</button>
@@ -10,9 +10,19 @@
 <script>
 export default {
     name: 'Contador',
+    props: {
+        titulo: String,
+        start: {
+            type: Number,
+            default: 15,
+            validator(val){
+                return val > 100
+            } 
+        }
+    },
     data(){
         return{
-            vrContador: 5,
+            vrContador:this.start,
             vrExponente : 2,
         }
     },

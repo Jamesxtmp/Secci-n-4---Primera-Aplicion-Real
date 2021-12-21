@@ -1,15 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <Contador />
+  <Indecision/>
+
 </template>
 
 <script>
+import Indecision from './components/Indecision.vue'
 import Contador from './components/Contador.vue'
 
 export default {
   name: 'App',
   components: {
-    Contador
+    Contador,
+    Indecision
   }
 }
 </script>
